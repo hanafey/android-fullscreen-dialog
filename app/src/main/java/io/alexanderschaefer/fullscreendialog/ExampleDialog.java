@@ -36,7 +36,7 @@ public class ExampleDialog extends DialogFragment {
             int width = ViewGroup.LayoutParams.MATCH_PARENT;
             int height = ViewGroup.LayoutParams.MATCH_PARENT;
             dialog.getWindow().setLayout(width, height);
-            dialog.getWindow().setWindowAnimations(R.style.AppTheme_Slide);
+            dialog.getWindow().setWindowAnimations(R.style.AppTheme_SlideInOut);
         }
     }
 
