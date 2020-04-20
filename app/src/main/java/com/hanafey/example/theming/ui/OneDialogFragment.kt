@@ -1,4 +1,4 @@
-package com.hanafey.example
+package com.hanafey.example.theming.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.DialogFragment
-import io.alexanderschaefer.fullscreendialog.R
+import com.hanafey.example.theming.R
 
 class OneDialogFragment : DialogFragment() {
     private lateinit var toolbar: Toolbar
@@ -27,7 +27,7 @@ class OneDialogFragment : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         toolbar = view.findViewById(R.id.toolbar)
         toolbar.setTitle(R.string.dialog_oon_title)
-        toolbar.setNavigationOnClickListener { v: View? -> dismiss() }
+        toolbar.setNavigationOnClickListener { dismiss() }
         toolbar.inflateMenu(R.menu.oon_dialog_menu)
         toolbar.setOnMenuItemClickListener {
             dismiss()

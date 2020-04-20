@@ -1,16 +1,19 @@
-package io.alexanderschaefer.fullscreendialog
+package com.hanafey.example.theming.ui
 
 import android.os.Bundle
 import android.view.Menu
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.Observer
 import com.google.android.material.button.MaterialButton
-import com.hanafey.example.OneDialogFragment
+import com.hanafey.example.theming.App
+import com.hanafey.example.theming.R
+import com.hanafey.example.theming.ui.fullscreendialog.ExampleDialog
 
 class MainActivity : AppCompatActivity() {
     private var dialog = 0
     private lateinit var toolbar: Toolbar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,7 +21,14 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         dialog = 1
         val button = findViewById<MaterialButton>(R.id.button)
-        button.setOnClickListener { v: View? -> openDialog() }
+        button.setOnClickListener { openDialog() }
+
+        (application as App).preferenceRepository.nightModeLive
+            .observe(this, Observer { mode ->
+                delegate.localNightMode = mode
+            })
+
+        (application as App).preferenceRepository.isDarkTheme = true
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

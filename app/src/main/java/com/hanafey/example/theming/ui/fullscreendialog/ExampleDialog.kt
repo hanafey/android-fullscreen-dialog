@@ -1,13 +1,14 @@
-package io.alexanderschaefer.fullscreendialog
+package com.hanafey.example.theming.ui.fullscreendialog
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
+import com.hanafey.example.theming.R
+
 
 class ExampleDialog : DialogFragment() {
     private lateinit var toolbar: Toolbar
@@ -39,7 +40,7 @@ class ExampleDialog : DialogFragment() {
         toolbar.setNavigationOnClickListener { dismiss() }
         toolbar.title = "Some Title"
         toolbar.inflateMenu(R.menu.example_dialog)
-        toolbar.setOnMenuItemClickListener { item: MenuItem? ->
+        toolbar.setOnMenuItemClickListener {
             dismiss()
             true
         }
