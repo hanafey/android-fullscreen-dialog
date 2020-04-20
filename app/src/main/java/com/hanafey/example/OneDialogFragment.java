@@ -40,7 +40,7 @@ public class OneDialogFragment extends DialogFragment {
         toolbar = view.findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.dialog_oon_title);
         toolbar.setNavigationOnClickListener(v -> dismiss());
-        toolbar.inflateMenu(R.menu.oon_dialog);
+        toolbar.inflateMenu(R.menu.oon_dialog_menu);
         toolbar.setOnMenuItemClickListener(item -> {
             dismiss();
             return true;

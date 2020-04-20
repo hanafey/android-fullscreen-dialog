@@ -1,15 +1,6 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents">
-        <!-- TODO: Review - why is this necessary? Is this a bug in the parent theme? -->
-        <item name="actionBarStyle">@style/Widget.MaterialComponents.ActionBar.Primary</item>
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorSurface">?attr/colorAccent</item>
-
-        <!--<item name="android:colorBackground">@color/colorBackground</item>-->
-        <item name="android:windowLightStatusBar">true</item>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -17,30 +8,17 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
-        <!--<item name="android:background">?attr/colorPrimary</item>-->
+    <style name="AppTheme.AppBarOverlay" parent="AppTheme">
     </style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Dark"></style>
+    <style name="AppTheme.PopupOverlay" parent="AppTheme"></style>
 
     <style name="AppTheme.FullScreenDialog" parent="Theme.MaterialComponents.Dialog">
-        <item name="actionBarStyle">@style/Widget.MaterialComponents.ActionBar.Primary</item>
-        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorPrimary">@color/primaryColor</item>
         <item name="android:windowIsFloating">false</item>
-        <item name="android:windowBackground">@android:color/white</item>
-        <item name="actionMenuTextColor">@color/colorAccent</item>
     </style>
 
     <style name="FullScreenDialog" parent="Theme.MaterialComponents.Dialog">
-        <item name="actionBarStyle">@style/Widget.MaterialComponents.ActionBar.Primary</item>
-        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorPrimary">@color/primaryColor</item>
         <item name="android:windowIsFloating">false</item>
-        <item name="android:windowBackground">@android:color/white</item>
-        <item name="actionMenuTextColor">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.SlideUpDown">
