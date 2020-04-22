@@ -14,6 +14,8 @@ class OneDialogFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // TODO: Confirm - this is just to block standard style being applied (which happens
+        //       if zero is passed for the style resource.
         setStyle(STYLE_NORMAL, R.style.FullScreenDialog)
     }
 
@@ -41,7 +43,8 @@ class OneDialogFragment : DialogFragment() {
         if (dialog != null) {
             val width = ViewGroup.LayoutParams.MATCH_PARENT
             val height = ViewGroup.LayoutParams.MATCH_PARENT
-            dialog.window!!.setLayout(width, height)
+            // TODO: Verify not needed.
+            // dialog.window!!.setLayout(width, height)
             dialog.window!!.setWindowAnimations(R.style.AppTheme_SlideInOut)
         }
     }

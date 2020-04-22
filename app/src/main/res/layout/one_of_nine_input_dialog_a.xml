@@ -4,8 +4,6 @@
     android:id="@+id/OON_root"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:theme="@style/OneOfNineTheme"
-    app:theme="@style/OneOfNineTheme"
     >
 
     <androidx.constraintlayout.widget.Guideline

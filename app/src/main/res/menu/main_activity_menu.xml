@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
     <item
-        android:id="@+id/a_item"
+        android:id="@+id/MA_menu_a"
         android:icon="@drawable/ic_subdirectory_arrow_left_black_24dp"
         android:title="A menu title"
         app:showAsAction="ifRoom"
         />
     <item
-        android:id="@+id/b_item"
+        android:id="@+id/MA_menu_dark"
         android:icon="@drawable/ic_close_black_24dp"
-        android:title="B menu title"
+        android:checkable="true"
+        android:title="Dark Theme"
         app:showAsAction="never"
         />
 </menu>

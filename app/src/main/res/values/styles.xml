@@ -1,115 +1,57 @@
-<resources xmlns:ns2="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?><!--
+~ Copyright (C) 2019 The Android Open Source Project
+~
+~ Licensed under the Apache License, Version 2.0 (the "License");
+~ you may not use this file except in compliance with the License.
+~ You may obtain a copy of the License at
+~
+~      http://www.apache.org/licenses/LICENSE-2.0
+~
+~ Unless required by applicable law or agreed to in writing, software
+~ distributed under the License is distributed on an "AS IS" BASIS,
+~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~ See the License for the specific language governing permissions and
+~ limitations under the License.
+-->
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-        <item name="viewInflaterClass">com.google.android.material.theme.MaterialComponentsViewInflater</item>
+    <!--Components-->
 
-        <!-- Colors -->
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">?attr/colorSecondary</item>
-
-        <item name="android:colorBackground">@color/design_default_color_background</item>
-        <item name="colorError">@color/design_default_color_error</item>
-
-        <item name="minTouchTargetSize">@dimen/mtrl_min_touch_target_size</item>
-
-        <!-- Action bar -->
-        <item name="actionBarSize">@dimen/mtrl_toolbar_default_height</item>
-        <item name="actionBarPopupTheme">@style/ThemeOverlay.MaterialComponents.Light</item>
-        <item name="actionBarStyle">@style/Widget.MaterialComponents.Light.ActionBar.Solid</item>
-        <item name="actionOverflowMenuStyle">@style/Widget.MaterialComponents.PopupMenu.Overflow</item>
-
-        <!-- Widget styles -->
-        <item name="android:contextPopupMenuStyle" ns2:targetApi="n">
-            @style/Widget.MaterialComponents.PopupMenu.ContextMenu
-        </item>
-        <item name="appBarLayoutStyle">@style/Widget.MaterialComponents.AppBarLayout.Primary</item>
-        <item name="badgeStyle">@style/Widget.MaterialComponents.Badge</item>
-        <item name="borderlessButtonStyle">@style/Widget.MaterialComponents.Button.TextButton</item>
-        <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar</item>
-        <item name="bottomNavigationStyle">@style/Widget.MaterialComponents.BottomNavigationView</item>
-        <item name="chipStyle">@style/Widget.MaterialComponents.Chip.Action</item>
-        <item name="checkboxStyle">@style/Widget.MaterialComponents.CompoundButton.CheckBox</item>
-        <item name="chipGroupStyle">@style/Widget.MaterialComponents.ChipGroup</item>
-        <item name="chipStandaloneStyle">@style/Widget.MaterialComponents.Chip.Entry</item>
-        <item name="extendedFloatingActionButtonStyle">@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon</item>
-        <item name="floatingActionButtonStyle">@style/Widget.MaterialComponents.FloatingActionButton</item>
-        <item name="listPopupWindowStyle">@style/Widget.MaterialComponents.PopupMenu.ListPopupWindow</item>
-        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
-        <item name="materialButtonOutlinedStyle">@style/Widget.MaterialComponents.Button.OutlinedButton</item>
-        <item name="materialButtonToggleGroupStyle">@style/Widget.MaterialComponents.MaterialButtonToggleGroup</item>
-        <item name="materialCardViewStyle">@style/Widget.MaterialComponents.CardView</item>
-        <item name="navigationViewStyle">@style/Widget.MaterialComponents.NavigationView</item>
-        <item name="popupMenuStyle">@style/Widget.MaterialComponents.PopupMenu</item>
-        <item name="radioButtonStyle">@style/Widget.MaterialComponents.CompoundButton.RadioButton</item>
-        <item name="snackbarStyle">@style/Widget.MaterialComponents.Snackbar</item>
-        <item name="snackbarButtonStyle">@style/Widget.MaterialComponents.Button.TextButton.Snackbar</item>
-        <item name="switchStyle">@style/Widget.MaterialComponents.CompoundButton.Switch</item>
-        <item name="tabStyle">@style/Widget.MaterialComponents.TabLayout</item>
-        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.FilledBox</item>
-        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar</item>
-
-        <!-- Dialog themes -->
-        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.MaterialComponents.Light.BottomSheetDialog</item>
-        <item name="alertDialogTheme">@style/ThemeOverlay.MaterialComponents.Dialog.Alert</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog</item>
-        <item name="android:datePickerDialogTheme" ns2:ignore="NewApi">@style/ThemeOverlay.MaterialComponents.Dialog</item>
-        <item name="android:timePickerDialogTheme" ns2:ignore="NewApi">@style/ThemeOverlay.MaterialComponents.Dialog</item>
-
-        <!-- Type styles -->
-        <item name="textAppearanceLargePopupMenu">?attr/textAppearanceSubtitle1</item>
-        <item name="textAppearanceSmallPopupMenu">?attr/textAppearanceSubtitle1</item>
-
-        <!-- Picker styles and themes. -->
-        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
-        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen</item>
-        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar</item>
+    <!--Bottom Sheets-->
+    <style name="ThemeOverlay.MyTheme.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.MyTheme.BottomSheet.Modal</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="bottomSheetStyle">@style/Widget.MyTheme.BottomSheet.Modal</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">@android:color/transparent</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="Widget.MyTheme.BottomSheet.Modal" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">?attr/shapeAppearanceLargeComponent</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="AppTheme">
+    <!--Navigation Drawer-->
+    <style name="Widget.MyTheme.NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <item name="itemTextAppearance">?attr/textAppearanceBody2</item>
     </style>
 
-    <style name="AppTheme.PopupOverlay" parent="AppTheme"></style>
-
+    <!--  Full screen dialog  -->
     <style name="AppTheme.FullScreenDialog" parent="Theme.MaterialComponents.Dialog">
         <item name="android:windowIsFloating">false</item>
     </style>
 
-    <style name="FullScreenDialog" parent="Theme.MaterialComponents.Dialog">
-        <item name="android:windowIsFloating">false</item>
+    <!-- Applying this style to a dialog makes the dialog not apply the default style for a dialog. This is
+         why this style has the magic property of doing something while saying nothing itself -->
+    <style name="FullScreenDialog">
+        <!--<item name="android:windowIsFloating">false</item>-->
     </style>
 
-    <style name="AppTheme.SlideUpDown">
-        <item name="android:windowEnterAnimation">@anim/slide_up</item>
-        <item name="android:windowExitAnimation">@anim/slide_down</item>
-    </style>
-
-    <style name="AppTheme.SlideInOut">
+    <style name="AppTheme.SlideInOut" parent="Base.Theme.MyApp">
         <item name="android:windowEnterAnimation">@anim/slide_in</item>
         <item name="android:windowExitAnimation">@anim/slide_out</item>
-    </style>
-
-
-    <style name="OON_ButtonStyle" parent="Widget.MaterialComponents.Button">
-        <item name="android:paddingTop">6dp</item>
-        <item name="android:paddingBottom">6dp</item>
-        <item name="android:insetTop">2dp</item>
-        <item name="android:insetBottom">2dp</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:insetLeft">4dp</item>
-        <item name="android:insetRight">4dp</item>
-        <item name="android:minHeight">2dp</item>
-    </style>
-
-    <style name="OneOfNineTheme" parent="@style/AppTheme">
-        <item name="materialButtonStyle">@style/OON_ButtonStyle</item>
-        <item name="buttonStyle">@style/OON_ButtonStyle</item>
     </style>
 
 </resources>

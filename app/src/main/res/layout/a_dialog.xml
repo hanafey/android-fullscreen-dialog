@@ -6,20 +6,17 @@
     >
 
     <com.google.android.material.appbar.AppBarLayout
+        style="@style/Widget.MaterialComponents.AppBarLayout.Surface"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        app:elevation="0dp"
         >
 
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
-            android:paddingEnd="16dp"
-            android:paddingStart="6dp"
-            app:contentInsetStartWithNavigation="0dp"
             app:navigationIcon="@drawable/ic_subdirectory_arrow_left_black_24dp"
+            app:titleTextColor="@color/material_on_surface_emphasis_high_type"
             />
 
     </com.google.android.material.appbar.AppBarLayout>
