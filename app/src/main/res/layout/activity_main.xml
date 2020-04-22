@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     tools:context="com.hanafey.example.theming.ui.MainActivity"
     >
 
     <com.google.android.material.appbar.AppBarLayout
-        style="@style/Widget.MaterialComponents.AppBarLayout.Surface"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         >
+        <!-- Style needed to get menu color correct, else it is black-->
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
+            style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
-            app:titleTextColor="@color/material_on_surface_emphasis_high_type"
             />
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_gravity="center"
-        android:text="Open dialog!" />
+        android:text="Open dialog!"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -3,6 +3,7 @@
     android:viewportHeight="24.0"
     android:viewportWidth="24.0"
     android:width="24dp"
+    android:tint="?attr/colorOnPrimarySurface"
     >
     <path
         android:fillColor="#FF000000"
