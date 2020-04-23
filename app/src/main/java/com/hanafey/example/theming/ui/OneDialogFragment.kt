@@ -30,7 +30,6 @@ class OneDialogFragment : DialogFragment() {
         toolbar = view.findViewById(R.id.toolbar)
         toolbar.setTitle(R.string.dialog_oon_title)
         toolbar.setNavigationOnClickListener { dismiss() }
-        toolbar.inflateMenu(R.menu.oon_dialog_menu)
         toolbar.setOnMenuItemClickListener {
             dismiss()
             true

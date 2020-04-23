@@ -38,6 +38,8 @@
         <item name="itemTextAppearance">?attr/textAppearanceBody2</item>
     </style>
 
+    <!--End of from MaterialThemeBuilder -->
+
     <!--  Full screen dialog  -->
     <style name="AppTheme.FullScreenDialog" parent="Theme.MaterialComponents.Dialog">
         <item name="android:windowIsFloating">false</item>

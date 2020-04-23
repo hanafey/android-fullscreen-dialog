@@ -8,4 +8,21 @@
         android:title="A1"
         app:showAsAction="ifRoom"
         />
+    <item
+        android:id="@+id/a2"
+        android:title="A2"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_menu_black_24dp"
+        android:title="Z"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/photo"
+        android:icon="@drawable/ic_add_a_photo_black_24dp"
+        android:title="Photo"
+        app:showAsAction="ifRoom"
+        />
 </menu>
