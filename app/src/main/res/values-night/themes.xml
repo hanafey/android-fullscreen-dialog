@@ -15,13 +15,16 @@
 -->
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!--Top level DayNight theme to be used in AndroidManifest.xml-->
-    <style name="Theme.MyApp" parent="Base.Theme.MyApp">
+    <style name="Theme.MyApp" parent="Theme.MyApp.Dark">
+        <item name="android:statusBarColor">@color/primaryVariantOther_night</item>
+    </style>
+
+    <style name="Theme.MyApp.Dark" parent="Base.Theme.MyApp">
         <!--Material color attributes (dark theme) -->
         <item name="colorPrimary">@color/primary_night</item>
         <item name="colorPrimaryVariant">@color/primaryVariant_night</item>
         <item name="colorSecondary">@color/secondary_night</item>
         <item name="colorSecondaryVariant">@color/secondaryVariant_night</item>
-        <item name="android:statusBarColor">@color/primaryVariantOther_night</item>
         <item name="android:colorBackground">@color/background_night</item>
         <item name="colorSurface">@color/surface_night</item>
         <item name="colorError">@color/error_night</item>

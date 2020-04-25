@@ -12,8 +12,8 @@
 
         <!-- Style needed to get menu color correct, else it is black-->
         <com.google.android.material.appbar.MaterialToolbar
-            style="?attr/toolbarStyle"
             android:id="@+id/toolbar"
+            style="?attr/toolbarStylePrimary"
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
             app:menu="@menu/oon_dialog_menu"

@@ -68,7 +68,7 @@
     <color name="secondaryVariant_night">#018786</color>
 
     <color name="background_night">#000000</color>
-    <color name="surface_night">#2B145C</color>
+    <color name="surface_night">#121212</color>
     <color name="error_night">#cf6679</color>
 
     <color name="onPrimary_night">#000000</color>
