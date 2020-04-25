@@ -17,6 +17,8 @@
     <!--Top level DayNight theme to be used in AndroidManifest.xml-->
     <style name="Theme.MyApp" parent="Theme.MyApp.Dark">
         <item name="android:statusBarColor">@color/primaryVariantOther_night</item>
+        <item name="colorSurfaceToolbarSpecial">#600</item>
+        <item name="colorOnSurfaceToolbarSpecial">#888</item>
     </style>
 
     <style name="Theme.MyApp.Dark" parent="Base.Theme.MyApp">
@@ -35,5 +37,8 @@
         <item name="colorOnError">@color/onError_night</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
+
+        <item name="colorSurfaceToolbarSpecial">@color/surface_night</item>
+        <item name="colorOnSurfaceToolbarSpecial">@color/onSurface_night</item>
     </style>
 </resources>

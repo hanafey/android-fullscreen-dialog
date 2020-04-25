@@ -13,7 +13,7 @@
         <!-- Style needed to get menu color correct, else it is black-->
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
-            style="?attr/toolbarStylePrimary"
+            style="?attr/toolbarStyleSpecial"
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
             />

@@ -17,6 +17,8 @@
     <!--Top level DayNight theme to be used in AndroidManifest.xml-->
     <style name="Theme.MyApp" parent="Base.Theme.MyApp">
         <item name="android:statusBarColor">@color/primaryVariantOther_day</item>
+        <item name="colorSurfaceToolbarSpecial">#f00</item>
+        <item name="colorOnSurfaceToolbarSpecial">#000</item>
     </style>
 
     <!--Base custom theme which will be shared between both light and dark theme variants-->
@@ -68,6 +70,10 @@
         <item name="navigationViewStyle">@style/Widget.MyTheme.NavigationView</item>
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.PrimarySurface</item>
         <item name="toolbarStylePrimary">@style/Widget.MaterialComponents.Toolbar.Primary</item>
+        <item name="toolbarStyleSpecial">@style/Toolbar.Special</item>
+
+        <item name="colorSurfaceToolbarSpecial">@color/primary_day</item>
+        <item name="colorOnSurfaceToolbarSpecial">@color/onPrimary_day</item>
     </style>
 
     <style name="Base.Theme.MaterialThemeBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">

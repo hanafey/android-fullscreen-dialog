@@ -56,4 +56,17 @@
         <item name="android:windowExitAnimation">@anim/slide_out</item>
     </style>
 
+    <style name="Toolbar.Special" parent="@style/Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">?attr/colorSurfaceToolbarSpecial</item>
+        <item name="titleTextColor">?attr/colorOnSurfaceToolbarSpecial</item>
+        <item name="subtitleTextColor">?attr/colorOnSurfaceToolbarSpecial</item>
+        <!-- Note: this theme overlay will only work if the style is applied directly to a Toolbar. -->
+        <item name="android:theme">@style/ThemeOverlay.Toolbar.Special</item>
+    </style>
+
+    <style name="ThemeOverlay.Toolbar.Special" parent="">
+        <item name="colorControlNormal">?attr/colorOnSurfaceToolbarSpecial</item>
+        <item name="actionMenuTextColor">?attr/colorOnSurfaceToolbarSpecial</item>
+    </style>
+
 </resources>

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Toolbar based on primary rather than surface color. This is important for dark theme, unless you like a dark toolbar. -->
-    <attr format="reference" name="toolbarStylePrimary" />
+    <attr name="toolbarStylePrimary" format="reference" />
+    <attr name="toolbarStyleSpecial" format="reference" />
+
+    <!-- Attributes for a [@style/toolbarStyleSpecial] -->
+    <attr name="colorSurfaceToolbarSpecial" format="color" />
+    <attr name="colorOnSurfaceToolbarSpecial" format="color" />
 </resources>
