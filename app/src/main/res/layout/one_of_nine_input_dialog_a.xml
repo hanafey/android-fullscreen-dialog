@@ -17,14 +17,14 @@
         android:id="@+id/OON_g2"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintGuide_percent="0.49"
         android:orientation="vertical"
         />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/OON_g3"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintGuide_percent="0.51"
         android:orientation="vertical"
         />
     <androidx.constraintlayout.widget.Guideline

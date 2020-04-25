@@ -21,6 +21,7 @@
         <item name="colorPrimaryVariant">@color/primaryVariant_night</item>
         <item name="colorSecondary">@color/secondary_night</item>
         <item name="colorSecondaryVariant">@color/secondaryVariant_night</item>
+        <item name="android:statusBarColor">@color/primaryVariantOther_night</item>
         <item name="android:colorBackground">@color/background_night</item>
         <item name="colorSurface">@color/surface_night</item>
         <item name="colorError">@color/error_night</item>
