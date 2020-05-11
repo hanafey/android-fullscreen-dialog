@@ -69,12 +69,12 @@
         android:layout_height="0dp"
         android:layout_width="0dp"
         app:layout_constraintTop_toTopOf="@id/OON_header_barrier"
-        app:layout_constraintBottom_toTopOf="@id/OON_value"
+        app:layout_constraintBottom_toTopOf="@id/OON_fraction_toggle"
         app:layout_constraintLeft_toLeftOf="@+id/OON_g1"
         app:layout_constraintRight_toRightOf="@+id/OON_g2"
         android:orientation="vertical"
         >
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/OON_1"
             android:layout_height="0dp"
             android:layout_width="match_parent"
@@ -82,15 +82,7 @@
             android:text="1"
             android:textAlignment="center"
             />
-        <Button
-            android:id="@+id/OON_2"
-            android:layout_height="0dp"
-            android:layout_width="match_parent"
-            android:layout_weight="1.0"
-            android:text="2"
-            android:textAlignment="center"
-            />
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/OON_3"
             android:layout_height="0dp"
             android:layout_width="match_parent"
@@ -98,15 +90,7 @@
             android:text="3"
             android:textAlignment="center"
             />
-        <Button
-            android:id="@+id/OON_4"
-            android:layout_height="0dp"
-            android:layout_width="match_parent"
-            android:layout_weight="1.0"
-            android:text="4"
-            android:textAlignment="center"
-            />
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/OON_5"
             android:layout_height="0dp"
             android:layout_width="match_parent"
@@ -114,15 +98,7 @@
             android:text="5"
             android:textAlignment="center"
             />
-        <Button
-            android:id="@+id/OON_6"
-            android:layout_height="0dp"
-            android:layout_width="match_parent"
-            android:layout_weight="1.0"
-            android:text="6"
-            android:textAlignment="center"
-            />
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/OON_7"
             android:layout_height="0dp"
             android:layout_width="match_parent"
@@ -130,15 +106,7 @@
             android:text="7"
             android:textAlignment="center"
             />
-        <Button
-            android:id="@+id/OON_8"
-            android:layout_height="0dp"
-            android:layout_width="match_parent"
-            android:layout_weight="1.0"
-            android:text="8"
-            android:textAlignment="center"
-            />
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/OON_9"
             android:layout_height="0dp"
             android:layout_width="match_parent"
@@ -153,84 +121,82 @@
         android:layout_height="0dp"
         android:layout_width="0dp"
         app:layout_constraintTop_toTopOf="@id/OON_header_barrier"
-        app:layout_constraintBottom_toTopOf="@id/OON_value"
+        app:layout_constraintBottom_toTopOf="@id/OON_fraction_toggle"
         app:layout_constraintLeft_toLeftOf="@+id/OON_g3"
         app:layout_constraintRight_toRightOf="@+id/OON_g4"
         android:orientation="vertical"
         >
-        <Button
-            android:id="@+id/OON_p1"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/OON_2"
             android:layout_height="0dp"
             android:layout_width="match_parent"
             android:layout_weight="1.0"
-            android:text="0.1"
+            android:text="2"
             android:textAlignment="center"
             />
-        <Button
-            android:id="@+id/OON_p2"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/OON_4"
             android:layout_height="0dp"
             android:layout_width="match_parent"
             android:layout_weight="1.0"
-            android:text="0.2"
+            android:text="4"
             android:textAlignment="center"
             />
-        <Button
-            android:id="@+id/OON_p3"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/OON_6"
             android:layout_height="0dp"
             android:layout_width="match_parent"
             android:layout_weight="1.0"
-            android:text="0.3"
+            android:text="6"
             android:textAlignment="center"
             />
-        <Button
-            android:id="@+id/OON_p4"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/OON_8"
             android:layout_height="0dp"
             android:layout_width="match_parent"
             android:layout_weight="1.0"
-            android:text="0.4"
+            android:text="8"
             android:textAlignment="center"
             />
-        <Button
-            android:id="@+id/OON_p5"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/OON_0"
             android:layout_height="0dp"
             android:layout_width="match_parent"
             android:layout_weight="1.0"
-            android:text="0.5"
-            android:textAlignment="center"
-            />
-        <Button
-            android:id="@+id/OON_p6"
-            android:layout_height="0dp"
-            android:layout_width="match_parent"
-            android:layout_weight="1.0"
-            android:text="0.6"
-            android:textAlignment="center"
-            />
-        <Button
-            android:id="@+id/OON_p7"
-            android:layout_height="0dp"
-            android:layout_width="match_parent"
-            android:layout_weight="1.0"
-            android:text="0.7"
-            android:textAlignment="center"
-            />
-        <Button
-            android:id="@+id/OON_p8"
-            android:layout_height="0dp"
-            android:layout_width="match_parent"
-            android:layout_weight="1.0"
-            android:text="0.8"
-            android:textAlignment="center"
-            />
-        <Button
-            android:id="@+id/OON_p9"
-            android:layout_height="0dp"
-            android:layout_width="match_parent"
-            android:layout_weight="1.0"
-            android:text="0.9"
+            android:text="0"
             android:textAlignment="center"
             />
     </LinearLayout>
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/OON_fraction_toggle"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/OON_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:checkedButton="@id/OON_whole"
+        app:selectionRequired="true"
+        app:singleSelection="true"
+        >
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/OON_whole"
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:icon="@drawable/ic_menu_black_24dp"
+            app:iconSize="48dp"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/OON_fraction"
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:icon="@drawable/ic_add_a_photo_black_24dp"
+            app:iconSize="48dp"
+            />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <TextView
         android:id="@+id/OON_value"
