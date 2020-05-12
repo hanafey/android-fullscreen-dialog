@@ -165,6 +165,7 @@
             android:layout_weight="1.0"
             android:text="0"
             android:textAlignment="center"
+            android:enabled="false"
             />
     </LinearLayout>
 
