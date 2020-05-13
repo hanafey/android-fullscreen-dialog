@@ -3,6 +3,7 @@ package com.hanafey.example.theming.ui
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
@@ -14,8 +15,9 @@ import com.hanafey.example.theming.ui.fullscreendialog.ExampleDialog
 
 class MainActivity : AppCompatActivity() {
     private var dialog = 1
-    private lateinit var toolbar: Toolbar
 
+    private val svm: OonSharedViewModel by viewModels()
+    private lateinit var toolbar: Toolbar
     private lateinit var preferenceRepository: PreferenceRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     private fun openDialog() {
         when (dialog) {
             0 -> ExampleDialog.display(supportFragmentManager)
-            1 -> OneDialogFragment().show(supportFragmentManager, "ONE")
+            1 -> OneDialogFragment.instance("junk", svm::class.java).show(supportFragmentManager, "ONE")
             else -> throw IllegalStateException("Unexpected value: $dialog")
         }
     }
