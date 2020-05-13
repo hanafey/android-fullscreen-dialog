@@ -7,15 +7,22 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
 import com.hanafey.example.theming.R
 import kotlin.math.roundToInt
 
-class OneDialogFragment : DialogFragment(), View.OnClickListener, MaterialButtonToggleGroup.OnButtonCheckedListener {
+class OneDialogFragment :
+    DialogFragment(),
+    View.OnClickListener,
+    View.OnLongClickListener,
+    MaterialButtonToggleGroup.OnButtonCheckedListener {
+
     private lateinit var toolbar: Toolbar
     private lateinit var numberButtons: List<MaterialButton>
-    private lateinit var valueText: TextView
+    private val vm: OonViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,11 +51,24 @@ class OneDialogFragment : DialogFragment(), View.OnClickListener, MaterialButton
         ).map { id ->
             val bv = view.findViewById<MaterialButton>(id)
             bv.setOnClickListener(this)
+            bv.setOnLongClickListener(this)
             bv
         }
 
         view.findViewById<MaterialButtonToggleGroup>(R.id.OON_fraction_toggle).addOnButtonCheckedListener(this)
-        valueText = view.findViewById(R.id.OON_value)
+        val valueText: TextView = view.findViewById(R.id.OON_value)
+
+        vm.oonValueLive.observe(this, Observer<String>() { value ->
+            valueText.text = value
+        })
+
+        vm.wholeNumberModeLiveData.observe(this, Observer<Boolean> { isWhole ->
+            numberButtons.forEachIndexed() { ix, bt ->
+                val label = if (isWhole) "$ix" else "0.$ix"
+                if (bt.text != label) bt.text = label
+            }
+            // numberButtons[0].isEnabled = !isWhole
+        })
     }
 
     override fun onStart() {
@@ -68,30 +88,34 @@ class OneDialogFragment : DialogFragment(), View.OnClickListener, MaterialButton
     }
 
     override fun onClick(v: View?) {
+        onClickWithModeOverride(v, false)
+    }
+
+    override fun onLongClick(v: View?): Boolean {
+        onClickWithModeOverride(v, true)
+        return true
+    }
+
+    fun onClickWithModeOverride(v: View?, override: Boolean) {
         val ix = numberButtons.indexOf(v)
         if (ix >= 0) {
-            val currentValue = valueText.text.toString().toDouble()
+            val currentValue = vm.oonValueAsDouble
             var intPart = currentValue.toInt()
             var fracPart = ((currentValue - intPart) * 10).roundToInt()
-            if (!numberButtons[0].isEnabled) {
+            if (vm.isWholeNumberMode xor override) {
                 // Whole number part being set
                 intPart = ix
             } else {
                 fracPart = ix
             }
-            valueText.text = if (fracPart != 0) "$intPart.$fracPart" else "$intPart"
+            vm.oonValue = if (fracPart != 0) "$intPart.$fracPart" else "$intPart"
         }
     }
 
     override fun onButtonChecked(group: MaterialButtonToggleGroup?, checkedId: Int, isChecked: Boolean) {
         if (isChecked) {
-            val wholeNumbers = checkedId == R.id.OON_whole
-            numberButtons.forEachIndexed() { ix, bt ->
-                val label = if (wholeNumbers) "$ix" else "0.$ix"
-                if (bt.text != label) bt.text = label
-            }
-
-            numberButtons[0].isEnabled = !wholeNumbers
+            vm.isWholeNumberMode = checkedId == R.id.OON_whole
         }
     }
+
 }
