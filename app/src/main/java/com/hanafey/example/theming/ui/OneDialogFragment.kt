@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
+import com.hanafey.android.DialogFragmentListener
 import com.hanafey.example.theming.R
 import kotlin.math.roundToInt
 
@@ -37,6 +38,7 @@ class OneDialogFragment :
         }
     }
 
+    private lateinit var validatedActivity: DialogFragmentListener
     private lateinit var svm: OonSharedViewModel
     private lateinit var toolbar: Toolbar
     private lateinit var numberButtons: List<MaterialButton>
@@ -61,12 +63,16 @@ class OneDialogFragment :
         toolbar = view.findViewById(R.id.toolbar)
         toolbar.title = svm.toolbarTitle
         toolbar.setNavigationOnClickListener {
+            svm.score = vm.oonValueAsDouble
+            validatedActivity.message(tag ?: "*", DialogFragmentListener.RESULT_OK)
             dismiss()
         }
         toolbar.setOnMenuItemClickListener {
             dismiss()
+            validatedActivity.message(tag ?: "*", DialogFragmentListener.RESULT_CANCEL)
             true
         }
+
         view.findViewById<TextView>(R.id.OON_title).text = svm.variableTitle
 
         numberButtons = listOf(
@@ -97,6 +103,10 @@ class OneDialogFragment :
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        validatedActivity = requireActivity().let {
+            if (it is DialogFragmentListener) it else throw IllegalStateException("Caller must implement DialogFragmentListener")
+        }
+
         val svmc =
             (arguments?.getSerializable(ARG_oon_shared_view_model)
                 ?: throw IllegalStateException("You must create dialog with static instance call.")) as Class<OonSharedViewModel>

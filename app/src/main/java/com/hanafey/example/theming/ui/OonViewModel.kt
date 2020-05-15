@@ -3,21 +3,23 @@ package com.hanafey.example.theming.ui
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.hanafey.android.dlog
 
 class OonViewModel : ViewModel() {
+    private val LTAG = this::class.java.simpleName
     private val wholeNumberModeMLD = MutableLiveData(true)
     private val oonValueMLD = MutableLiveData("0")
 
     val wholeNumberModeLiveData: LiveData<Boolean>
         get() = wholeNumberModeMLD
 
-    var isWholeNumberMode
+    var isWholeNumberMode: Boolean
         get() = wholeNumberModeMLD.value!!
         set(value) {
             wholeNumberModeMLD.value = value
         }
 
-    var oonValue
+    var oonValue: String
         get() = oonValueMLD.value!!
         set(value) {
             oonValueMLD.value = value
@@ -39,5 +41,10 @@ class OonViewModel : ViewModel() {
             }
 
         }
+
+    override fun onCleared() {
+        dlog(LTAG) { "onCleared()" }
+        super.onCleared()
+    }
 }
 
